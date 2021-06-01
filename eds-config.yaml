@@ -33,7 +33,7 @@ static_resources:
       connect_timeout: 10s
       type: EDS
       eds_cluster_config:
-        service_name: lootlink-web
+        service_name: srv-qp3a4lugw4s5ei3a
         eds_config:
           resourceApiVersion: V3
           api_config_source:
