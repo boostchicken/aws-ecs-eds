@@ -6,7 +6,7 @@
 
 ## AWS Elastic Container Service.
 
-   Gets privateIPv4Address of EC2/Fargate Tasks.  +++++++
+   Gets privateIPv4Address of EC2/Fargate Tasks.
    ### Port Resolution
    1. Environmental Variable: **_aws.ecs.clusterName__port** (e.g. us-west-2-fargate_port=8080)
    2. Default: 80
