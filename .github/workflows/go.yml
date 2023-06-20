@@ -19,12 +19,24 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Set up Go
-      uses: actions/setup-go@v3
+      uses: actions/setup-go@v4
       with:
-        go-version: 1.19
+        go-version: 1.20
+    - name: Install dependencies
+      run: go get .
+
 
     - name: Build
       run: go build -v ./...
 
     - name: Test
       run: go test -v ./...
+      
+    - name: go-mod-tidy-pr
+      uses: sue445/go-mod-tidy-pr@v1.5.2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        git_user_name: GitHub Actions
+        git_user_email: john@boostchicken.dev
+        reviewer: boostchicken
+        base: main
