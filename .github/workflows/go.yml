@@ -21,16 +21,7 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
-        go-version: 1.20        
-    - run: go mod install
-
-
-    - name: Build
-      run: go build -v ./...
-
-    - name: Test
-      run: go test -v ./...
-      
+        go-version: '1.20'      
     - name: go-mod-tidy-pr
       uses: sue445/go-mod-tidy-pr@v1.5.2
       with:
@@ -39,3 +30,11 @@ jobs:
         git_user_email: john@boostchicken.dev
         reviewer: boostchicken
         base: main
+
+
+    - name: Build
+      run: go build -v ./...
+
+    - name: Test
+      run: go test -v ./...
+    
