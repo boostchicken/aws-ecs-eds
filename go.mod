@@ -1,6 +1,6 @@
 module github.com/boostchicken/aws-ecs-eds
 
-go 1.15
+go 1.20
 
 require (
 	github.com/aws/aws-sdk-go-v2 v1.6.0
