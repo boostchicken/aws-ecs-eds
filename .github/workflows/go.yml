@@ -22,19 +22,11 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: '1.20'      
-    - name: go-mod-tidy-pr
-      uses: sue445/go-mod-tidy-pr@v1.5.2
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        git_user_name: GitHub Actions
-        git_user_email: john@boostchicken.dev
-        reviewer: boostchicken
-        base: main
-
-
+    - name: go mod
+      run: go mod download
+      
     - name: Build
       run: go build -v ./...
 
     - name: Test
       run: go test -v ./...
-    
