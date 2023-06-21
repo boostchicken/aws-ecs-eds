@@ -75,7 +75,7 @@ func (s *server) StreamEndpoints(stream endpointservice.EndpointDiscoveryService
 			if !cacheOk {
 				eds := s.generateEDS(req.ResourceNames[0])
 				response := cache.RawResponse{Version: strconv.FormatInt(time.Now().Unix(), 10),
-					Resources: []types.ResourceWithTtl{{Resource: eds}},
+					Resources: []types.ResourceWithTTL{{Resource: eds}},
 					Request:   req}
 				cacheResp, _ = response.GetDiscoveryResponse()
 
@@ -102,7 +102,7 @@ func (s *server) FetchEndpoints(ctx context.Context, req *discovery.DiscoveryReq
 		eds := s.generateEDS(req.ResourceNames[0])
 		s.cache.Set(req.ResourceNames[0], eds, time.Second*30)
 		response := cache.RawResponse{Version: strconv.FormatInt(time.Now().Unix(), 10),
-			Resources: []types.ResourceWithTtl{{Resource: eds}},
+			Resources: []types.ResourceWithTTL{{Resource: eds}},
 			Request:   req}
 		cacheResp, err = response.GetDiscoveryResponse()
 		s.cache.Set(req.ResourceNames[0], cacheResp, time.Minute*1)
