@@ -10,7 +10,7 @@ require (
 	github.com/envoyproxy/go-control-plane v0.11.1-0.20230524094728-9239064ad72f
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/sirupsen/logrus v1.9.3
-	google.golang.org/grpc v1.56.0
+	google.golang.org/grpc v1.56.2
 )
 
 require (
